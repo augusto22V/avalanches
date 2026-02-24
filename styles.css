@@ -1,0 +1,85 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:#0f0f0f;
+    color:#fff;
+    min-height:100vh;
+    padding-bottom: 220px;
+}
+
+.hero {
+    background: linear-gradient(to bottom, #1a1a1a, #0f0f0f);
+    padding: 70px 20px 40px;
+    text-align:center;
+}
+
+.hero h1 { font-size:2.8rem; color:#ff6600; margin-bottom:8px; }
+.hero p { font-size:1.3rem; color:#ccc; margin-bottom:20px; }
+
+.info-local p { margin:6px 0; font-size:1.1rem; }
+.estado { margin-top:10px; font-weight:bold; padding:8px 16px; border-radius:20px; display:inline-block; }
+.abierto { background:#25D366; color:#000; }
+.cerrado { background:#e63946; color:white; }
+
+.ig-link { color:#ff9900; text-decoration:none; font-weight:bold; display:block; margin-top:15px; }
+
+.menu { padding:30px 20px; max-width:1200px; margin:0 auto; }
+.categoria { color:#ff9900; font-size:1.8rem; margin:40px 0 20px; text-align:center; }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; }
+
+.item {
+    background:#1a1a1a;
+    border-radius:12px;
+    padding:18px;
+    transition:all 0.22s;
+}
+.item:hover { transform:translateY(-6px); box-shadow:0 10px 20px rgba(255,102,0,0.18); }
+
+.item img { width:100%; border-radius:10px; aspect-ratio:1/1; object-fit:cover; margin-bottom:12px; }
+
+.precio { font-size:1.5rem; color:#ffcc00; font-weight:bold; margin:10px 0; display:block; }
+
+.cantidad-control { display:flex; justify-content:center; gap:16px; margin:14px 0; }
+.cantidad-control button { width:42px; height:42px; font-size:1.5rem; background:#333; color:white; border:none; border-radius:10px; cursor:pointer; }
+.cantidad { font-size:1.6rem; font-weight:bold; min-width:35px; text-align:center; }
+
+.agregar-btn { width:100%; padding:14px; background:#ff6600; color:white; border:none; border-radius:10px; font-size:1.1rem; font-weight:bold; cursor:pointer; transition:0.2s; }
+.agregar-btn:hover { background:#ff8533; }
+
+.extras-section { margin:15px 0; text-align:left; font-size:0.95rem; }
+.extra-label { display:block; margin:6px 0; color:#ddd; }
+.extra-label input { margin-right:8px; accent-color:#ff6600; }
+
+.tipo-pedido { margin:15px 0; }
+.tipo-pedido label { display:block; margin-bottom:6px; color:#ccc; font-size:0.95rem; }
+.opciones-tipo { display:flex; flex-direction:column; gap:10px; }
+.opciones-tipo label { display:flex; align-items:center; gap:8px; color:white; font-size:1rem; }
+.opciones-tipo input[type="radio"] { accent-color:#ff6600; }
+
+.entrega, .pago { margin:15px 0; }
+.entrega label, .pago label { display:block; margin-bottom:6px; color:#ccc; font-size:0.95rem; }
+.entrega input, .pago select {
+    width:100%; padding:10px; border-radius:8px; border:1px solid #444;
+    background:#222; color:white; font-size:1rem;
+}
+
+.carrito-container {
+    position:fixed; bottom:0; left:0; right:0;
+    background:#1a1a1a; border-top:2px solid #333;
+    padding:16px 20px; max-height:65vh; overflow-y:auto;
+    z-index:100; box-shadow:0 -4px 15px rgba(0,0,0,0.5);
+}
+
+.carrito-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.carrito-header h3 { color:#ff9900; }
+
+#contador-items { background:#ff6600; color:black; padding:3px 9px; border-radius:12px; font-size:0.9rem; }
+
+#vaciar-btn { background:#444; color:#ddd; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:0.9rem; }
+
+#totalCarrito { font-size:1.4rem; font-weight:bold; text-align:right; color:#ffcc00; margin:12px 0; }
+
+#enviar-btn { width:100%; padding:16px; background:#25D366; color:white; border:none; border-radius:10px; font-size:1.25rem; font-weight:bold; cursor:pointer; }
+#enviar-btn:hover:not(:disabled) { background:#20b858; }
+#enviar-btn:disabled { background:#555; cursor:not-allowed; }
