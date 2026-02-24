@@ -1,36 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avalanches</title>
+    <title>Avalanches Burger - Hamburguesas y Lomitos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Avalanches</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Welcome to the Avalanches project</h2>
-            <p>This project explores the dynamics of avalanches and their impact.</p>
-        </section>
-        <section>
-            <h2>Latest News</h2>
-            <p>Stay tuned for the latest updates on avalanche research.</p>
-        </section>
-        <section>
-            <h2>Submit Your Data</h2>
-            <form>
-                <label for="data-input">Input Data:</label>
-                <input type="text" id="data-input" name="data-input" style="border: 1px solid black; padding: 5px;"
+
+<header class="hero">
+    <h1>Avalanches Burger</h1>
+    <p>¡Hamburguesas y lomitos irresistibles en Salto del Guairá! 🍔🔥</p>
+    
+    <div class="info-local">
+        <p>📍 Calle 10, frente a Ferretería Caaguazú</p>
+        <p>🚚 Delivery: 0985841531</p>
+        <p>🕗 18:00 – 23:30 hs</p>
+        <div id="estado-local" class="estado">Cargando...</div>
+    </div>
+    
+    <a href="https://www.instagram.com/avalanches_sdg/" target="_blank" class="ig-link">
+        📸 @avalanches_sdg – Ver fotos reales
+    </a>
+</header>
+
+<section class="menu">
+    <h2>Menú Avalanches</h2>
+
+    <h3 class="categoria">Hamburguesas</h3>
+    <div class="grid">
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="X-Burger">
+            <h4>X-Burger</h4>
+            <p>Pan brioche, carne 100g, queso</p>
+            <span class="precio">15.000 Gs</span>
+            <div class="cantidad-control">
+                <button onclick="cambiarCantidad(this, -1)">−</button>
+                <span class="cantidad">1</span>
+                <button onclick="cambiarCantidad(this, 1)">+</button>
+            </div>
+            <div class="extras-section">
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Bacon" data-precio="5000"> + Bacon (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Queso Cheddar" data-precio="5000"> + Queso Cheddar (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Cebolla Caramelizada" data-precio="5000"> + Cebolla Caramelizada (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Carne Todd" data-precio="7000"> + Carne Todd (7.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Tomate y Lechuga" data-precio="5000"> + Tomate y Lechuga (5.000)</label>
+            </div>
+            <button class="agregar-btn" onclick="agregarAlCarrito(this, 'X-Burger', 15000)">+ Agregar</button>
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="Clásica">
+            <h4>Clásica</h4>
+            <p>Pan brioche, carne 100g, jamón</p>
+            <span class="precio">20.000 Gs</span>
+            <div class="cantidad-control">
+                <button onclick="cambiarCantidad(this, -1)">−</button>
+                <span class="cantidad">1</span>
+                <button onclick="cambiarCantidad(this, 1)">+</button>
+            </div>
+            <div class="extras-section">
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Bacon" data-precio="5000"> + Bacon (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Queso Cheddar" data-precio="5000"> + Queso Cheddar (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Cebolla Caramelizada" data-precio="5000"> + Cebolla Caramelizada (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Carne Todd" data-precio="7000"> + Carne Todd (7.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Tomate y Lechuga" data-precio="5000"> + Tomate y Lechuga (5.000)</label>
+            </div>
+            <button class="agregar-btn" onclick="agregarAlCarrito(this, 'Clásica', 20000)">+ Agregar</button>
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="X-Toby">
+            <h4>X-Toby</h4>
+            <p>Pan brioche, doble carne, salsa especial, cebolla caramelizada, doble bacon</p>
+            <span class="precio">28.000 Gs</span>
+            <div class="cantidad-control">
+                <button onclick="cambiarCantidad(this, -1)">−</button>
+                <span class="cantidad">1</span>
+                <button onclick="cambiarCantidad(this, 1)">+</button>
+            </div>
+            <div class="extras-section">
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Bacon" data-precio="5000"> + Extra Bacon (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Queso Cheddar" data-precio="5000"> + Extra Queso Cheddar (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Cebolla Caramelizada" data-precio="5000"> + Cebolla Caramelizada (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Carne Todd" data-precio="7000"> + Carne Todd (7.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Tomate y Lechuga" data-precio="5000"> + Tomate y Lechuga (5.000)</label>
+            </div>
+            <button class="agregar-btn" onclick="agregarAlCarrito(this, 'X-Toby', 28000)">+ Agregar</button>
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="Avalanches">
+            <h4>Avalanches</h4>
+            <p>Pan brioche, doble carne, salsa especial, queso, jamón, bacon, lechuga, tomate</p>
+            <span class="precio">35.000 Gs</span>
+            <div class="cantidad-control">
+                <button onclick="cambiarCantidad(this, -1)">−</button>
+                <span class="cantidad">1</span>
+                <button onclick="cambiarCantidad(this, 1)">+</button>
+            </div>
+            <div class="extras-section">
                 
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Avalanches Project</p>
-    </footer>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Bacon" data-precio="5000"> + Bacon (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Queso Cheddar" data-precio="5000"> + Queso Cheddar (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Cebolla Caramelizada" data-precio="5000"> + Cebolla Caramelizada (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Carne Todd" data-precio="7000"> + Carne Todd (7.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Tomate y Lechuga" data-precio="5000"> + Tomate y Lechuga (5.000)</label>
+            </div>
+            <button class="agregar-btn" onclick="agregarAlCarrito(this, 'Avalanches', 35000)">+ Agregar</button>
+        </div>
+    </div>
+
+    <h3 class="categoria">Don Lomo (en pan árabe)</h3>
+    <div class="grid">
+        <div class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS45kivKKUp3jZ78BssjusDYPTTn9kxeog0Jg&s" alt="Don Lomo Carne">
+            <h4>Don Lomo Carne</h4>
+            <p>Carne, tomate, lechuga, repollo, salsa</p>
+            <span class="precio">25.000 Gs</span>
+            <div class="cantidad-control">
+                <button onclick="cambiarCantidad(this, -1)">−</button>
+                <span class="cantidad">1</span>
+                <button onclick="cambiarCantidad(this, 1)">+</button>
+            </div>
+            <div class="extras-section">
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Bacon" data-precio="5000"> + Bacon (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Queso Cheddar" data-precio="5000"> + Queso Cheddar (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Cebolla Caramelizada" data-precio="5000"> + Cebolla Caramelizada (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Carne Todd" data-precio="7000"> + Carne Todd (7.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Tomate y Lechuga" data-precio="5000"> + Tomate y Lechuga (5.000)</label>
+            </div>
+            <button class="agregar-btn" onclick="agregarAlCarrito(this, 'Don Lomo Carne', 25000)">+ Agregar</button>
+        </div>
+
+        <div class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS45kivKKUp3jZ78BssjusDYPTTn9kxeog0Jg&s" alt="Don Lomo Pollo">
+            <h4>Don Lomo Pollo</h4>
+            <p>Pollo, tomate, lechuga, repollo, salsa</p>
+            <span class="precio">25.000 Gs</span>
+            <div class="cantidad-control">
+                <button onclick="cambiarCantidad(this, -1)">−</button>
+                <span class="cantidad">1</span>
+                <button onclick="cambiarCantidad(this, 1)">+</button>
+            </div>
+            <div class="extras-section">
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Bacon" data-precio="5000"> + Bacon (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Queso Cheddar" data-precio="5000"> + Queso Cheddar (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Cebolla Caramelizada" data-precio="5000"> + Cebolla Caramelizada (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Carne Todd" data-precio="7000"> + Carne Todd (7.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Tomate y Lechuga" data-precio="5000"> + Tomate y Lechuga (5.000)</label>
+            </div>
+            <button class="agregar-btn" onclick="agregarAlCarrito(this, 'Don Lomo Pollo', 25000)">+ Agregar</button>
+        </div>
+
+        <div class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS45kivKKUp3jZ78BssjusDYPTTn9kxeog0Jg&s" alt="Don Lomo Mixto">
+            <h4>Don Lomo Mixto</h4>
+            <p>Carne + Pollo, tomate, lechuga, repollo, salsa</p>
+            <span class="precio">25.000 Gs</span>
+            <div class="cantidad-control">
+                <button onclick="cambiarCantidad(this, -1)">−</button>
+                <span class="cantidad">1</span>
+                <button onclick="cambiarCantidad(this, 1)">+</button>
+            </div>
+            <div class="extras-section">
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Bacon" data-precio="5000"> + Bacon (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Queso Cheddar" data-precio="5000"> + Queso Cheddar (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Cebolla Caramelizada" data-precio="5000"> + Cebolla Caramelizada (5.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Carne Todd" data-precio="7000"> + Carne Todd (7.000)</label>
+                <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Tomate y Lechuga" data-precio="5000"> + Tomate y Lechuga (5.000)</label>
+            </div>
+            <button class="agregar-btn" onclick="agregarAlCarrito(this, 'Don Lomo Mixto', 25000)">+ Agregar</button>
+        </div>
+    </div>
+     <h3 class="categoria">Acompañamientos</h3>
+    <div class="grid">
+        <div class="item">
+            <img src="https://cdn.blog.paulinacocina.net/wp-content/uploads/2017/10/frenchfries.jpg" alt="Papas 200gr">
+            <h4>Papas Fritas</h4>
+            <p>200 gr</p>
+            <span class="precio">10.000 Gs</span>
+            <div class="cantidad-control">
+                <button onclick="cambiarCantidad(this, -1)">−</button>
+                <span class="cantidad">1</span>
+                <button onclick="cambiarCantidad(this, 1)">+</button>
+            </div>
+            <button class="agregar-btn" onclick="agregarAlCarrito(this, 'Papas Fritas 200gr', 10000)">+ Agregar</button>
+        </div>X-Avalanches
+
+        <div class="item">
+            <img src="https://cdn.blog.paulinacocina.net/wp-content/uploads/2017/10/frenchfries.jpg" alt="Papas 380gr">
+            <h4>Papas Fritas</h4>
+            <p>380 gr</p>
+            <span class="precio">20.000 Gs</span>
+            <div class="cantidad-control">
+                <button onclick="cambiarCantidad(this, -1)">−</button>
+                <span class="cantidad">1</span>
+                <button onclick="cambiarCantidad(this, 1)">+</button>
+            </div>
+            <button class="agregar-btn" onclick="agregarAlCarrito(this, 'Papas Fritas 380gr', 20000)">+ Agregar</button>
+        </div>
+    </div>
+</section>
+
+<div class="carrito-container">
+    <div class="carrito-header">
+        <h3>🛒 Tu pedido (<span id="contador-items">0</span>)</h3>
+        <button id="vaciar-btn" onclick="vaciarCarrito()" style="display:none;">Vaciar</button>
+    </div>
+
+    <div class="tipo-pedido">
+        <label>¿Cómo querés recibirlo?</label>
+        <div class="opciones-tipo">
+            <label>
+                <input type="radio" name="tipoPedido" value="delivery" checked onchange="toggleDireccion()">
+                Delivery (a domicilio)
+            </label>
+            <label>
+                <input type="radio" name="tipoPedido" value="pickup" onchange="toggleDireccion()">
+                Para llevar (paso a buscar)
+            </label>
+        </div>
+    </div>
+
+   <div class="entrega" id="divDireccion" style="display: none;">
+    <label>Ubicación actual (coordenadas):</label>
+    <input type="text" id="coords-display" readonly placeholder="Haz clic en el botón para obtener ubicación" style="width:100%; padding:10px; background:#222; color:#ccc; border:1px solid #444; border-radius:8px; margin-top:8px;">
+    
+    <button type="button" id="btn-ubicacion" class="ubicacion-btn">
+        📍 Obtener Ubicación 
+    </button>
+    
+    <small style="color:#aaa; display:block; margin-top:8px;">
+        Usa esto solo para Delivery. Las coordenadas se envían automáticamente al pedido.
+    </small>
+</div>
+
+    <div class="pago">
+        <label for="pago">Forma de pago:</label>
+        <select id="pago">
+            <option value="">Elegir</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Transferencia">Transferencia</option>
+            <option value="Otro">Otro</option>
+        </select>
+    </div>
+
+    <ul id="listaCarrito"></ul>
+    <p id="totalCarrito">Total: 0 Gs</p>
+    
+    <button id="enviar-btn" onclick="enviarCarrito()" disabled>
+        Enviar pedido por WhatsApp →
+    </button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
