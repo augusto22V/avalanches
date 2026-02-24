@@ -83,3 +83,38 @@ body {
 #enviar-btn { width:100%; padding:16px; background:#25D366; color:white; border:none; border-radius:10px; font-size:1.25rem; font-weight:bold; cursor:pointer; }
 #enviar-btn:hover:not(:disabled) { background:#20b858; }
 #enviar-btn:disabled { background:#555; cursor:not-allowed; }
+#listaCarrito li {
+    font-size: 1rem;
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+}
+.ubicacion-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    background: #4285F4; /* Azul de Google Maps */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.ubicacion-btn:hover {
+    background: #357ae8;
+}
+
+.ubicacion-btn:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+#coords-display {
+    font-size: 0.95rem;
+    text-align: center;
+}
