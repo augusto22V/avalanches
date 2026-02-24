@@ -70,7 +70,7 @@
         </div>
 
         <div class="item">
-            <img src="https://images.unsplash.com/photo-1585238342021-63b22d12ed3a?w=800" alt="X-Toby">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="X-Toby">
             <h4>X-Toby</h4>
             <p>Pan brioche, doble carne, salsa especial, cebolla caramelizada, doble bacon</p>
             <span class="precio">28.000 Gs</span>
@@ -90,7 +90,7 @@
         </div>
 
         <div class="item">
-            <img src="https://images.unsplash.com/photo-1607013253068-5e5c0d14e4a5?w=800" alt="Avalanches">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="Avalanches">
             <h4>Avalanches</h4>
             <p>Pan brioche, doble carne, salsa especial, queso, jamón, bacon, lechuga, tomate</p>
             <span class="precio">35.000 Gs</span>
@@ -100,6 +100,7 @@
                 <button onclick="cambiarCantidad(this, 1)">+</button>
             </div>
             <div class="extras-section">
+                
                 <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Bacon" data-precio="5000"> + Bacon (5.000)</label>
                 <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Queso Cheddar" data-precio="5000"> + Queso Cheddar (5.000)</label>
                 <label class="extra-label"><input type="checkbox" class="extra-check" data-extra="Cebolla Caramelizada" data-precio="5000"> + Cebolla Caramelizada (5.000)</label>
@@ -113,7 +114,7 @@
     <h3 class="categoria">Don Lomo (en pan árabe)</h3>
     <div class="grid">
         <div class="item">
-            <img src="https://images.unsplash.com/photo-1627308595200-86d690148bbe?w=800" alt="Don Lomo Carne">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS45kivKKUp3jZ78BssjusDYPTTn9kxeog0Jg&s" alt="Don Lomo Carne">
             <h4>Don Lomo Carne</h4>
             <p>Carne, tomate, lechuga, repollo, salsa</p>
             <span class="precio">25.000 Gs</span>
@@ -133,7 +134,7 @@
         </div>
 
         <div class="item">
-            <img src="https://images.unsplash.com/photo-1627308595200-86d690148bbe?w=800" alt="Don Lomo Pollo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS45kivKKUp3jZ78BssjusDYPTTn9kxeog0Jg&s" alt="Don Lomo Pollo">
             <h4>Don Lomo Pollo</h4>
             <p>Pollo, tomate, lechuga, repollo, salsa</p>
             <span class="precio">25.000 Gs</span>
@@ -153,7 +154,7 @@
         </div>
 
         <div class="item">
-            <img src="https://images.unsplash.com/photo-1627308595200-86d690148bbe?w=800" alt="Don Lomo Mixto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS45kivKKUp3jZ78BssjusDYPTTn9kxeog0Jg&s" alt="Don Lomo Mixto">
             <h4>Don Lomo Mixto</h4>
             <p>Carne + Pollo, tomate, lechuga, repollo, salsa</p>
             <span class="precio">25.000 Gs</span>
@@ -175,7 +176,7 @@
      <h3 class="categoria">Acompañamientos</h3>
     <div class="grid">
         <div class="item">
-            <img src="https://images.unsplash.com/photo-1585109641720-259d48e056e9?w=800" alt="Papas 200gr">
+            <img src="https://cdn.blog.paulinacocina.net/wp-content/uploads/2017/10/frenchfries.jpg" alt="Papas 200gr">
             <h4>Papas Fritas</h4>
             <p>200 gr</p>
             <span class="precio">10.000 Gs</span>
@@ -185,10 +186,10 @@
                 <button onclick="cambiarCantidad(this, 1)">+</button>
             </div>
             <button class="agregar-btn" onclick="agregarAlCarrito(this, 'Papas Fritas 200gr', 10000)">+ Agregar</button>
-        </div>
+        </div>X-Avalanches
 
         <div class="item">
-            <img src="https://images.unsplash.com/photo-1585109641720-259d48e056e9?w=800" alt="Papas 380gr">
+            <img src="https://cdn.blog.paulinacocina.net/wp-content/uploads/2017/10/frenchfries.jpg" alt="Papas 380gr">
             <h4>Papas Fritas</h4>
             <p>380 gr</p>
             <span class="precio">20.000 Gs</span>
@@ -222,10 +223,18 @@
         </div>
     </div>
 
-    <div class="entrega" id="divDireccion">
-        <label for="direccion">Dirección de entrega:</label>
-        <input type="text" id="direccion" placeholder="Ej: Calle 10 o Av. Principal">
-    </div>
+   <div class="entrega" id="divDireccion" style="display: none;">
+    <label>Ubicación actual (coordenadas):</label>
+    <input type="text" id="coords-display" readonly placeholder="Haz clic en el botón para obtener ubicación" style="width:100%; padding:10px; background:#222; color:#ccc; border:1px solid #444; border-radius:8px; margin-top:8px;">
+    
+    <button type="button" id="btn-ubicacion" class="ubicacion-btn">
+        📍 Obtener Ubicación 
+    </button>
+    
+    <small style="color:#aaa; display:block; margin-top:8px;">
+        Usa esto solo para Delivery. Las coordenadas se envían automáticamente al pedido.
+    </small>
+</div>
 
     <div class="pago">
         <label for="pago">Forma de pago:</label>
